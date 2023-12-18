@@ -11,10 +11,10 @@ const CartItem = ({ id, name, image, price, amount }) => {
   const handleIncrease = () => setIncrease(id);
 
   return (
-    <div className="cart_heading grid grid-five-column">
+    <article className="cart_heading grid grid-five-column">
       <div className="cart-image--name">
         <figure>
-          <img src={image} alt={id} />
+          <img src={image} alt={name} />
         </figure>
 
         <p>{name}</p>
@@ -41,7 +41,7 @@ const CartItem = ({ id, name, image, price, amount }) => {
       <div>
         <FaTrash className="remove_icon" onClick={() => removeItem(id)} />
       </div>
-    </div>
+    </article>
   );
 };
 

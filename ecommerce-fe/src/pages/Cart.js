@@ -18,68 +18,54 @@ const Cart = () => {
 
   return (
     <Wrapper>
-      <div className="container">
-        <table className="cart-table">
-          <thead>
-            <tr className="cart-heading grid grid-five-column">
-              <th>
-                <h3>Item</h3>
-              </th>
-              <th className="cart-hide">
-                <h3>Price</h3>
-              </th>
-              <th>
-                <h3>Quantity</h3>
-              </th>
-              <th className="cart-hide">
-                <h3>Subtotal</h3>
-              </th>
-              <th>
-                <h3>Remove</h3>
-              </th>
-            </tr>
-          </thead>
-          <hr />
-          <tbody>
-            {cart.map((currentElem, index) => (
-              <CartItem key={index} {...currentElem} />
-            ))}
-          </tbody>
-        </table>
-
-        <div className="cart-two-button">
+      <article className="container">
+        <header className="cart_heading grid grid-five-column">
+          <h2>Item</h2>
+          <h2 className="cart-hide">Price</h2>
+          <h2>Quantity</h2>
+          <h2 className="cart-hide">Subtotal</h2>
+          <h2>Remove</h2>
+        </header>
+        <hr />
+        <main className="cart-item">
+          {cart.map((curElem) => {
+            return <CartItem key={curElem.id} {...curElem} />;
+          })}
+        </main>
+        <hr />
+        <article className="cart-two-button">
           <NavLink to="/products">
             <Button> Continue Shopping </Button>
           </NavLink>
           <Button className="btn btn-clear" onClick={clearCart}>
-            clear cart
+            Clear Cart
           </Button>
-        </div>
+        </article>
 
-        <div className="order-total--amount">
+        <section className="order-total--amount">
           <div className="order-total--subdata">
             <div>
-              <p>subtotal:</p>
+              <p>Subtotal:</p>
               <p>
                 <FormatPrice price={total_price} />
               </p>
             </div>
             <div>
-              <p>shipping fee:</p>
+              <p>Shipping Fee:</p>
               <p>
                 <FormatPrice price={shipping_fee} />
               </p>
             </div>
             <hr />
             <div>
-              <p>order total:</p>
+              <p>Order Total:</p>
               <p>
                 <FormatPrice price={shipping_fee + total_price} />
               </p>
             </div>
           </div>
-        </div>
-      </div>
+        </section>
+      </article>
     </Wrapper>
   );
 };
@@ -112,6 +98,12 @@ const Wrapper = styled.section`
     text-align: center;
     text-transform: uppercase;
   }
+
+  h2 {
+    font-size: 1.8rem;
+    font-weight: 400;
+  }
+
   hr {
     margin-top: 1rem;
   }
