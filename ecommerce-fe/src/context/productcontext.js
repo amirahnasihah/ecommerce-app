@@ -4,7 +4,7 @@ import reducer from "../reducer/productReducer";
 
 const AppContext = createContext();
 
-const API = process.env.REACT_APP_LOCALHOST;
+const API = process.env.REACT_APP_BACKEND;
 
 const initialState = {
   isLoading: false,
