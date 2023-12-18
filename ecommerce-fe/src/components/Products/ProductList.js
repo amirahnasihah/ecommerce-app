@@ -17,7 +17,11 @@ const ProductList = () => {
   }
 
   if (filter_products.length === 0) {
-    return <LoadingAnimation />;
+    return (
+      <EmptyDiv>
+        <h3>No Cart in Item </h3>
+      </EmptyDiv>
+    );
   }
 
   return (
@@ -28,11 +32,11 @@ const ProductList = () => {
         ))}
       </div>
 
-      <LoadMoreButton>
+      <div className="load-more-btn">
         {!isLoading && (
           <StyledButton onClick={handleLoadMore}>Load More</StyledButton>
         )}
-      </LoadMoreButton>
+      </div>
     </Wrapper>
   );
 };
@@ -43,6 +47,10 @@ const Wrapper = styled.section`
   .container {
     max-width: 120rem;
     gap: 3rem;
+  }
+
+  .load-more-btn {
+    padding: 4rem 0;
   }
 
   figure {
@@ -101,8 +109,16 @@ const Wrapper = styled.section`
   }
 `;
 
-const LoadMoreButton = styled.div`
-  padding: 5rem 0;
+const EmptyDiv = styled.div`
+  display: grid;
+  place-items: center;
+  height: 50vh;
+
+  h3 {
+    font-size: 4.2rem;
+    text-transform: capitalize;
+    font-weight: 300;
+  }
 `;
 
 export default ProductList;
