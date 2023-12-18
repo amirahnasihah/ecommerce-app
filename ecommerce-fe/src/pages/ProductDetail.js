@@ -42,15 +42,14 @@ const ProductDetail = () => {
 
             <section className="product-data">
               <h2>{name}</h2>
-              <div className="product-data-price">
+              <article className="product-data-price">
                 <p>
                   PRICE: <FormatPrice price={price} />
                 </p>
-              </div>
+              </article>
 
-              <p>{description}</p>
-
-              <div className="product-data-info">
+              <article className="product-data-info">
+                <p>{description}</p>
                 <p>
                   Available:{" "}
                   <span>
@@ -59,7 +58,7 @@ const ProductDetail = () => {
                       : "Not Available"}
                   </span>
                 </p>
-              </div>
+              </article>
               <hr />
               {countInStock > 0 && <AddToCart product={singleProduct} />}
             </section>

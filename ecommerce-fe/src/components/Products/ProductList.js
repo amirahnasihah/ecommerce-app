@@ -19,7 +19,7 @@ const ProductList = () => {
   if (filter_products.length === 0) {
     return (
       <EmptyDiv>
-        <h3>No Cart in Item </h3>
+        <h3>No Product Available</h3>
       </EmptyDiv>
     );
   }
