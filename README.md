@@ -1,4 +1,4 @@
-# Electonic Ecommerce
+# Electronic Ecommerce
 
 ## Product Listing Page
 
