@@ -47,6 +47,9 @@ const Footer = () => {
         <div className="terms-section">
           <p>Privacy Policy</p>
           <p>Terms & Conditions</p>
+          <a href="https://github.com/amirahnasihah/ecommerce-app">
+            github link
+          </a>
         </div>
       </div>
     </Wrapper>
